@@ -9,7 +9,7 @@ CStrSplit::CStrSplit()
 
 CStrSplit::~CStrSplit()
 {
-	printf("Destory : %s\n", __func__);
+	//printf("Destory : %s\n", __func__);
 }
 
 std::vector<std::string> CStrSplit::Split(const std::string& s, char seperator)
