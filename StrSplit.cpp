@@ -22,12 +22,13 @@ std::vector<std::string> CStrSplit::Split(const std::string& s, char seperator)
 	{
 		std::string substring(s.substr(prev_pos, pos - prev_pos));
 
-		output.push_back(substring);
+		if( !substring.empty() )	output.push_back(substring);
 
 		prev_pos = ++pos;
 	}
 
-	output.push_back(s.substr(prev_pos, pos - prev_pos)); // Last word
+	int last_len = pos - prev_pos ;
+	if( last_len > 0 )	output.push_back(s.substr(prev_pos, pos - prev_pos)); // Last word
 
 	return output;
 }
